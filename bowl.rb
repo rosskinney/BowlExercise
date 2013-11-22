@@ -38,5 +38,29 @@ class BowlingGame
 
     return total_score
   end
+
+  private
+
+  # Initialize values for roll and next_roll.
+  #
+  # Returns nothing.
+  def init_roll
+    @roll      = @rolls[@current_roll]
+    @next_roll = @rolls[@current_roll + 1]
+  end
+
+  # Returns true if the current roll is a strike, false otherwise.
+  def strike?
+    @roll == 10
+  end
+
+
+  # Scores a strike frame, and adds it to the total score for the game.
+  #
+  # Returns nothing.
+  def score_strike
+    @total_score += 10 + @next_roll + @rolls[@current_roll + 2]
+    @current_roll += 1
+  end
 end
 
