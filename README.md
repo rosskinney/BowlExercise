@@ -1,0 +1,4 @@
+BowlExercise
+============
+
+Bowling Ruby Kata
